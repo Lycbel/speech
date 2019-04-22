@@ -1,13 +1,24 @@
 {
-  "name": "vue-boilerplate-template",
+  "name": "speechServerSanagement",
   "version": "3.1.0",
-  "description": "A Nice Boilerplate Template for creating medium plus Vue.js projects ",
-  "author": "nicejade <yunjeff@163.com>",
+  "description": "front end side for speech and tutor management",
+  "author": "yichang liangyichang@xindong.com",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "NODE_ENV=production node build/build.js",
+    "cli": "cd cli && npm i -g && cd -",
+    "build:dll": "webpack --config build/webpack.dll.conf.js",
+    "lint-staged": "lint-staged",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "analyz": "npm_config_report=true npm run build",
+    "jarvis": "npm_config_dashboard=true npm run build",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "pretest": "NODE_ENV=production node build/build.js && node test/index.js",
+    "preview": "NODE_ENV=production node build/preview.js",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "pre-commit": [

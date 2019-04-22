@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["minify"],
+    ["minify", { "simplify": false }],
     ["env", { "modules": false }],
     "stage-2"
   ],
